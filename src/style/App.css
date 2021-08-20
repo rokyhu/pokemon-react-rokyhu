@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+
 html {
   box-sizing: border-box;
 }
@@ -25,7 +27,7 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0 auto;
+  margin: 0;
 }
 
 p {
@@ -34,7 +36,7 @@ p {
 
 a:link {
   text-decoration: none;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   color: rgb(182, 94, 94);
 }
 
@@ -52,6 +54,11 @@ a:hover {
 a:active {
   text-decoration: underline;
   color: rgb(182, 94, 94);
+}
+
+.NoBorder:hover {
+  margin-bottom: 0px;
+  border-bottom: 0px solid black;
 }
 
 code {
@@ -89,8 +96,8 @@ code {
 }
 
 .App-header {
-  padding: 10px;
-  background-color: rgba(36, 28, 28, 0.6);
+  padding: 10px 20px;
+  /* background-color: rgba(36, 28, 28, 0.6); */
   max-height: 70px;
   display: flex;
   align-items: center;
@@ -99,7 +106,21 @@ code {
   color: white;
 }
 
+.AppLogo {
+  background-image: url(../images/logo.png);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  width: 70px;
+  height: 70px;
+  padding: 0 20px;
+}
+
 .NavItem {
+  font-family: "Abril Fatface", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
   padding: 8px;
   margin: 2px;
 }
@@ -116,7 +137,7 @@ code {
 
 .App-footer {
   background-color: #0b0c0e;
-  max-height: 100px;
+  height: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
