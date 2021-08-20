@@ -20,7 +20,7 @@ export default class TypeList extends React.Component {
     render() {
         return (
             <>
-                <div className="CardNavigation">
+                <div className="CardNavigation VisibilityHidden">
                     <button className="btn">Previous</button>
                 </div>
                 <div className="CardContainer">
@@ -28,7 +28,7 @@ export default class TypeList extends React.Component {
                         <Type key={type.url} type={type} />
                     ))}
                 </div>
-                <div className="CardNavigation">
+                <div className="CardNavigation VisibilityHidden">
                     <button className="btn">Next</button>
                 </div>
             </>

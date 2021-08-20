@@ -34,7 +34,7 @@ export default class Type extends React.Component {
                     width="96"
                     height="96">
                 </img>
-                <h6>Loading...</h6>
+                <p>Loading...</p>
             </div>
         }
 
@@ -49,7 +49,7 @@ export default class Type extends React.Component {
                     width="96"
                     height="96">
                 </img>
-                <h6>{this.state.typeDetails.name}</h6>
+                <p>{this.state.typeDetails.name}</p>
             </div>
         )
     }

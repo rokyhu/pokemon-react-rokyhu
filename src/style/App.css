@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
 
-html {
+html,
+body {
   box-sizing: border-box;
 }
 
@@ -31,7 +32,7 @@ h6 {
 }
 
 p {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 a:link,
@@ -72,18 +73,21 @@ code {
 }
 
 .App {
+  background-color: #a0193c;
   background-image: url(../images/wallpaper.jpg);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-attachment: fixed;
   background-position: center;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   text-align: center;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 50px;
 }
 
 .App-logo {
@@ -100,7 +104,7 @@ code {
 .App-header {
   padding: 10px 20px;
   /* background-color: rgba(36, 28, 28, 0.6); */
-  max-height: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -125,14 +129,15 @@ code {
     "Helvetica Neue", sans-serif;
   padding: 8px;
   margin: 2px;
+  cursor: pointer;
 }
 
 .App-body {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
-  padding: 20px 100px;
-  flex-grow: 2;
+  padding: 10px 20px;
+  /* flex-grow: 2; */
   font-size: calc(10px + 2vmin);
   color: rgb(36, 36, 36);
 }
@@ -142,19 +147,19 @@ code {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 0 40px;
+  padding: 0 14px;
 }
 
 .Card {
-  flex: 0 1 calc(20% - 8px);
+  width: 240px;
   height: 96px;
-  flex-grow: 1;
   background-color: white;
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
   display: flex;
   align-items: center;
+  box-shadow: 3px 3px #cccccc;
 }
 
 .btn {
@@ -166,7 +171,7 @@ code {
   color: rgb(0, 0, 0);
   padding: 0.7em 1.7em;
   text-align: center;
-  margin: 4px 2px;
+  margin: 10px;
   width: 100px;
   opacity: 0.8;
   transition: 0.3s;
@@ -180,11 +185,18 @@ code {
   opacity: 1;
 }
 
+.VisibilityHidden {
+  visibility: hidden;
+}
+
 .App-footer {
   background-color: #0b0c0e;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 50px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
