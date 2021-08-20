@@ -3,12 +3,15 @@ import PageHeader from './PageHeader';
 import PageBody from './PageBody';
 import PageFooter from './PageFooter';
 
-export default function MainContainer() {
-    return (
-        <div className="Main-container">
-            <PageHeader />
-            <PageBody />
-            <PageFooter />
-        </div>
-    )
+export default class MainContainer extends React.Component {
+    render() {
+        return (
+            <div className="Main-container">
+                <PageHeader menuItems = {this.props.menuItems}/>
+                <PageBody />
+                <PageFooter />
+            </div>
+        )
+    }
+    
 }
