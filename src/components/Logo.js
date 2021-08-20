@@ -1,11 +1,12 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Logo extends Component {
     render() {
         return (
-            <a href="/" className="NoBorder">
+            <Link to="/" className="NoBorder">
                 <div className="AppLogo"></div>
-            </a>
+            </Link>
         )
     }
 }

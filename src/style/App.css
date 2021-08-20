@@ -34,25 +34,29 @@ p {
   font-size: 0.8rem;
 }
 
-a:link {
+a:link,
+Link:link {
   text-decoration: none;
   /* text-transform: uppercase; */
   color: rgb(182, 94, 94);
 }
 
-a:visited {
+a:visited,
+Link:visited {
   text-decoration: none;
   color: rgb(182, 94, 94);
 }
 
-a:hover {
+a:hover,
+Link:hover {
   border-bottom: 3px solid indianred;
   margin-bottom: -3px;
   color: indianred;
 }
 
-a:active {
-  text-decoration: underline;
+a:active,
+Link:active {
+  text-decoration: none;
   color: rgb(182, 94, 94);
 }
 
@@ -68,6 +72,17 @@ code {
 }
 
 .App {
+  background-image: url(../images/wallpaper.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   text-align: center;
 }
 
@@ -80,20 +95,6 @@ code {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.Main-container {
-  background-image: url(../images/wallpaper.jpg);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
 }
 
 .App-header {
@@ -127,13 +128,51 @@ code {
 }
 
 .App-body {
+  padding: 20px 100px;
   flex-grow: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: rgb(36, 36, 36);
+}
+
+.CardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+}
+
+.btn {
+  background-color: #f7d2d2;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 0.7em 1.7em;
+  text-align: center;
+  margin: 4px 2px;
+  width: 100px;
+  opacity: 0.8;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.PokemonCard {
+  width: 16vw;
+  height: 10vh;
+  flex-grow: 1;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-footer {
