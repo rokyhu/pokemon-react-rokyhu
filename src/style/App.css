@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
 
-html {
+html,
+body {
   box-sizing: border-box;
 }
 
@@ -31,28 +32,32 @@ h6 {
 }
 
 p {
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
-a:link {
+a:link,
+Link:link {
   text-decoration: none;
   /* text-transform: uppercase; */
   color: rgb(182, 94, 94);
 }
 
-a:visited {
+a:visited,
+Link:visited {
   text-decoration: none;
   color: rgb(182, 94, 94);
 }
 
-a:hover {
+a:hover,
+Link:hover {
   border-bottom: 3px solid indianred;
   margin-bottom: -3px;
   color: indianred;
 }
 
-a:active {
-  text-decoration: underline;
+a:active,
+Link:active {
+  text-decoration: none;
   color: rgb(182, 94, 94);
 }
 
@@ -68,7 +73,21 @@ code {
 }
 
 .App {
+  background-color: #a0193c;
+  background-image: url(../images/wallpaper.jpg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
   text-align: center;
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 50px;
 }
 
 .App-logo {
@@ -82,24 +101,10 @@ code {
   }
 }
 
-.Main-container {
-  background-image: url(../images/wallpaper.jpg);
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: center;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
 .App-header {
   padding: 10px 20px;
   /* background-color: rgba(36, 28, 28, 0.6); */
-  max-height: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: left;
@@ -124,23 +129,74 @@ code {
     "Helvetica Neue", sans-serif;
   padding: 8px;
   margin: 2px;
+  cursor: pointer;
 }
 
 .App-body {
-  flex-grow: 2;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
+  padding: 10px 20px;
+  /* flex-grow: 2; */
   font-size: calc(10px + 2vmin);
   color: rgb(36, 36, 36);
 }
 
+.CardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+}
+
+.Card {
+  width: 240px;
+  height: 96px;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  box-shadow: 3px 3px #cccccc;
+}
+
+.btn {
+  font-family: "Fjalla One", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  background-color: #ffffff;
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 0.7em 1.7em;
+  text-align: center;
+  margin: 10px;
+  width: 100px;
+  opacity: 0.8;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+
+.VisibilityHidden {
+  visibility: hidden;
+}
+
 .App-footer {
   background-color: #0b0c0e;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 50px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
