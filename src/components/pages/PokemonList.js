@@ -21,13 +21,15 @@ export default class PokemonList extends React.Component {
     render() {
         return (
             <>
+                <div className="CardNavigation">
+                    <button className="btn">Previous</button>
+                </div>
                 <div className="CardContainer">
                     {this.state.pokemonList.results.map((pokemon) => (
                         <Pokemon key={pokemon.url} pokemon={pokemon} />
                     ))}
                 </div>
                 <div className="CardNavigation">
-                    <button className="btn">Previous</button>
                     <button className="btn">Next</button>
                 </div>
             </>
