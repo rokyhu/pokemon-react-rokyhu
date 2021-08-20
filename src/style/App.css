@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap");
 
 html {
   box-sizing: border-box;
@@ -88,8 +88,9 @@ code {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  resize: both;
-  overflow: none;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -118,7 +119,7 @@ code {
 }
 
 .NavItem {
-  font-family: "Abril Fatface", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  font-family: "Fjalla One", -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
     "Helvetica Neue", sans-serif;
   padding: 8px;
@@ -148,6 +149,34 @@ code {
 
 .App-link {
   color: #61dafb;
+}
+
+.github-corner:hover .octo-arm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  .github-corner:hover .octo-arm {
+    animation: none;
+  }
+  .github-corner .octo-arm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
 }
 
 @keyframes App-logo-spin {
