@@ -128,6 +128,9 @@ code {
 }
 
 .App-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 20px 100px;
   flex-grow: 2;
   font-size: calc(10px + 2vmin);
@@ -142,8 +145,23 @@ code {
   padding: 0 40px;
 }
 
+.Card {
+  flex: 0 1 calc(20% - 8px);
+  height: 96px;
+  flex-grow: 1;
+  background-color: white;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
 .btn {
-  background-color: #f7d2d2;
+  font-family: "Fjalla One", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  background-color: #ffffff;
   border: none;
   color: rgb(0, 0, 0);
   padding: 0.7em 1.7em;
@@ -160,19 +178,6 @@ code {
 
 .btn:hover {
   opacity: 1;
-}
-
-.PokemonCard {
-  width: 16vw;
-  height: 10vh;
-  flex-grow: 1;
-  background-color: white;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .App-footer {

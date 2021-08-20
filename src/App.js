@@ -19,7 +19,9 @@ export default class App extends React.Component {
 
             <Route exact path="/" render={props => (
               <React.Fragment>
-                <h3>“There's no sense in going out of your way to get somebody to like you.” – Ash</h3>
+                <div>
+                  <h3>“There's no sense in going out of your way to get somebody to like you.” – Ash</h3>
+                </div>
               </React.Fragment>
             )} />
 
