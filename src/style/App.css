@@ -17,8 +17,41 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 auto;
+}
+
 p {
   font-size: 0.8rem;
+}
+
+a:link {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: rgb(182, 94, 94);
+}
+
+a:visited {
+  text-decoration: none;
+  color: rgb(182, 94, 94);
+}
+
+a:hover {
+  border-bottom: 3px solid indianred;
+  margin-bottom: -3px;
+  color: indianred;
+}
+
+a:active {
+  text-decoration: underline;
+  color: rgb(182, 94, 94);
 }
 
 code {
@@ -68,6 +101,7 @@ code {
 
 .NavItem {
   padding: 8px;
+  margin: 2px;
 }
 
 .App-body {
