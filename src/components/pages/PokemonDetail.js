@@ -1,11 +1,8 @@
 import React from 'react'
 
-export default class PokemonDetail extends React.Component {
+export default function PokemonDetail(props) {
     
-    
-    render() {
-
-        const pokemonDetails = this.props.location.pokemonDetails;
+    const pokemonDetails = this.props.location.pokemonDetails;
         console.log(pokemonDetails);
         return (
             <div>
@@ -14,5 +11,4 @@ export default class PokemonDetail extends React.Component {
                 <p>{pokemonDetails.order}</p>
             </div>
         )
-    }
 }

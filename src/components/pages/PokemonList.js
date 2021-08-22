@@ -3,7 +3,7 @@ import axios from 'axios';
 import Pokemon from './Pokemon';
 
 
-export default function PokemonList() {
+export default function PokemonList(props) {
 
     const [pokemonUrl, setPokemonUrl] = useState('https://pokeapi.co/api/v2/pokemon');
     
