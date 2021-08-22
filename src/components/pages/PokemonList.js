@@ -5,7 +5,7 @@ import Pokemon from './Pokemon';
 
 export default function PokemonList(props) {
 
-    const [pokemonUrl, setPokemonUrl] = useState('https://pokeapi.co/api/v2/pokemon');
+    const [pokemonUrl] = useState('https://pokeapi.co/api/v2/pokemon');
     
     const [pokemonList, setPokemonList] = useState({
         count: 0,
