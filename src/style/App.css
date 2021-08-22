@@ -50,6 +50,11 @@ Link:visited {
 
 a:hover,
 Link:hover {
+  color: indianred;
+}
+
+a:hover.NavItem,
+Link:hover.NavItem {
   border-bottom: 3px solid indianred;
   margin-bottom: -3px;
   color: indianred;
@@ -160,6 +165,10 @@ code {
   display: flex;
   align-items: center;
   box-shadow: 3px 3px #cccccc;
+}
+
+.Card:hover {
+  box-shadow: 3px 3px #afafaf;
 }
 
 .btn {
