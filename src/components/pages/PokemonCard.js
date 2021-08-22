@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import imgPlaceholder from '../../images/image_placeholder.jpg';
 
-export default function Pokemon(props) {
+export default function PokemonCard(props) {
 
     const [pokemonDetails, setPokemonDetails] = useState();
 
