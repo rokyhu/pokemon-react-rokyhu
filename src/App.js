@@ -8,46 +8,44 @@ import PokemonList from './components/pages/PokemonList';
 import TypeList from './components/pages/TypeList';
 import PokemonDetail from './components/pages/PokemonDetail';
 
-export default class App extends React.Component {
+export default function App(props) {
 
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          <PageHeader />
+  return (
+    <Router>
+      <div className="App">
+        <PageHeader />
 
-          <div className="App-body">
+        <div className="App-body">
 
 
-            <Switch>
-              <Route exact path="/" render={props => (
-                <>
-                    <div>
-                      <h3>“Even if you lose in battle, if you surpass what you’ve done before, you have bested yourself."</h3>
-                      <br></br>
-                      <h5>– Marshall</h5>
-                      <br></br>
-                      <p>SELECT A MENU OPTION TO GET STARTED.</p>
-                    </div>
-                </>
-              )} />
+          <Switch>
+            <Route exact path="/" render={props => (
+              <>
+                  <div>
+                    <h3>“Even if you lose in battle, if you surpass what you’ve done before, you have bested yourself."</h3>
+                    <br></br>
+                    <h5>– Marshall</h5>
+                    <br></br>
+                    <p>SELECT A MENU OPTION TO GET STARTED.</p>
+                  </div>
+              </>
+            )} />
 
-              <Route path="/pokemons" component={PokemonList} />
+            <Route path="/pokemons" component={PokemonList} />
 
-              <Route path="/types" component={TypeList} />
+            <Route path="/types" component={TypeList} />
 
-              <Route path="/about" component={About} />
-              
-              <Route path="/pokemon-detail" component={PokemonDetail} />
+            <Route path="/about" component={About} />
+            
+            <Route path="/pokemon-detail" component={PokemonDetail} />
 
-            </Switch>
+          </Switch>
 
-          </div>
-          
-          <PageFooter />
         </div>
-      </Router>
-    );
-  }
+        
+        <PageFooter />
+      </div>
+    </Router>
+  );
   
 }
