@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function PokemonDetail(props) {
     
-    const pokemonDetails = this.props.location.pokemonDetails;
+    const pokemonDetails = props.location.pokemonDetails;
         console.log(pokemonDetails);
         return (
             <div>
