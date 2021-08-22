@@ -134,10 +134,10 @@ code {
 
 .App-body {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   padding: 10px 20px;
-  /* flex-grow: 2; */
+  flex-grow: 2;
   font-size: calc(10px + 2vmin);
   color: rgb(36, 36, 36);
 }
