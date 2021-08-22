@@ -26,7 +26,6 @@ export default function TypeCard(props) {
         align-items: center;
         box-shadow: 3px 3px #eee;
         text-transform: capitalize;
-        cursor: pointer;
         &:hover {
             box-shadow: 3px 3px #aaa;
         }
