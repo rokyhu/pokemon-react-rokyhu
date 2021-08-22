@@ -21,11 +21,15 @@ export default class App extends React.Component {
 
             <Switch>
               <Route exact path="/" render={props => (
-                <React.Fragment>
-                  <div>
-                    <h3>“There's no sense in going out of your way to get somebody to like you.” – Ash</h3>
-                  </div>
-                </React.Fragment>
+                <>
+                    <div>
+                      <h3>“Even if you lose in battle, if you surpass what you’ve done before, you have bested yourself."</h3>
+                      <br></br>
+                      <h5>– Marshall</h5>
+                      <br></br>
+                      <p>SELECT A MENU OPTION TO GET STARTED.</p>
+                    </div>
+                </>
               )} />
 
               <Route path="/pokemons" component={PokemonList} />

@@ -1,41 +1,35 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import imgPlaceholder from '../../images/image_placeholder.jpg';
 
-export default class Pokemon extends React.Component {
+export default function Pokemon(props) {
 
-    state = {
-        pokemonDetails: null
-    }
+    const [pokemonDetails, setPokemonDetails] = useState();
 
-    componentDidMount() {
-        const url = this.props.pokemon.url
+    useEffect(() => {
+        const url = props.pokemon.url
         axios.get(url)
-        .then(res => this.setState({pokemonDetails: res.data}))
-    }
+        .then(res => setPokemonDetails(res.data))
+    }, [props]);
     
-    
-    render() {
-        const isDataPresent = this.state.pokemonDetails !== null;
-        const pokemonId = isDataPresent ? this.state.pokemonDetails.id : null
-
-        return (
+    const isDataPresent = pokemonDetails != null;
+    const pokemonId = isDataPresent ? pokemonDetails.id : null
             
-            <Link to={{
-                pathname: `/pokemon-detail/${pokemonId}`,
-                pokemonDetails: this.state.pokemonDetails
-            }}>
-                <div className="Card">
-                    <img
-                        src={isDataPresent ? this.state.pokemonDetails.sprites.front_default : imgPlaceholder}
-                        alt={isDataPresent ? this.state.pokemonDetails.name : 'Loading...'}
-                        width="96"
-                        height="96">
-                    </img>
-                    <p>{isDataPresent ? this.state.pokemonDetails.name : 'Loading...'}</p>
-                </div>
-            </Link>
-        )
-    }
+    return (
+        <Link to={{
+            pathname: `/pokemon-detail/${pokemonId}`,
+            pokemonDetails: pokemonDetails
+        }}>
+        <div className="Card">
+            <img
+                src={isDataPresent ? pokemonDetails.sprites.front_default : imgPlaceholder}
+                alt={isDataPresent ? pokemonDetails.name : 'Loading...'}
+                width="96"
+                height="96">
+            </img>
+            <p>{isDataPresent ? pokemonDetails.name : 'Loading...'}</p>
+        </div>
+        </Link>
+    )
 }
