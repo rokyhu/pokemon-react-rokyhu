@@ -21,17 +21,17 @@ export default function TypeList(props) {
     
     return (
         <>
-            {/* <div className="CardNavigation VisibilityHidden">
+            <div className="CardNavigation VisibilityHidden">
                 <button className="btn">Previous</button>
-            </div> */}
+            </div>
             <div className="CardContainer">
                 {typeList.results.map((type) => (
                     <Type key={type.url} type={type} />
                 ))}
             </div>
-            {/* <div className="CardNavigation VisibilityHidden">
+            <div className="CardNavigation VisibilityHidden">
                 <button className="btn">Next</button>
-            </div> */}
+            </div>
         </>
     )
 }
