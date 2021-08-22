@@ -1,56 +1,40 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import imgPlaceholder from '../../images/image_placeholder.jpg';
 
-export default class Type extends React.Component {
+export default function Type(props) {
 
-    state = {
-        typeDetails: null,
-        pokemonDetails: null
-    }
+    const [typeDetails, setTypeDetails] = useState();
+    const [pokemonDetails, setPokemonDetails] = useState();
 
-    componentDidMount() {
-        const url = this.props.type.url
+    useEffect(() => {
+        const url = props.type.url
         axios.get(url)
-        .then(res => this.setState({typeDetails: res.data}))
-    }
+        .then(res => setTypeDetails(res.data))
+    }, [props]);
 
-    getExamplePokemonDetails() {
-        const examplePokemons = this.state.typeDetails.pokemon[0];
+    const getExamplePokemonDetails = () => {
+        const examplePokemons = typeDetails.pokemon[0];
         if (examplePokemons) {
-            const examplePokemonUrl = this.state.typeDetails.pokemon[0].pokemon.url
+            const examplePokemonUrl = typeDetails.pokemon[0].pokemon.url
             axios.get(examplePokemonUrl)
-            .then(res => this.setState({pokemonDetails: res.data}))
+            .then(res => setPokemonDetails(res.data))
         }
+    };
     
+    if (typeDetails) {
+        getExamplePokemonDetails();
     }
-    
-    render() {
-        if (!this.state.typeDetails) {
-            return <div className="Card">
-                <img
-                    src={imgPlaceholder}
-                    alt='Loading...'
-                    width="96"
-                    height="96">
-                </img>
-                <p>Loading...</p>
-            </div>
-        }
 
-        this.getExamplePokemonDetails();
-
-        return (
-            <div className="Card">
-                <img
-                    src={!this.state.pokemonDetails ? imgPlaceholder : this.state.pokemonDetails.sprites.front_default}
-                    // src={imgPlaceholder}
-                    alt={this.state.typeDetails.name}
-                    width="96"
-                    height="96">
-                </img>
-                <p>{this.state.typeDetails.name}</p>
-            </div>
-        )
-    }
+    return (
+        <div className="Card">
+            <img
+                src={!pokemonDetails ? imgPlaceholder : pokemonDetails.sprites.front_default}
+                alt={!pokemonDetails ? 'Loading...' : typeDetails.name}
+                width="96"
+                height="96">
+            </img>
+            <p>{!pokemonDetails ? 'Loading...' : typeDetails.name}</p>
+        </div>
+    )
 }
