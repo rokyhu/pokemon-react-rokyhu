@@ -14,7 +14,6 @@ export default function Pokemon(props) {
     }, [props]);
     
     const isDataPresent = pokemonDetails != null;
-    console.log('isdatapresent ' + isDataPresent)
     const pokemonId = isDataPresent ? pokemonDetails.id : null
             
     return (
