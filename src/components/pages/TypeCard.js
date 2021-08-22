@@ -3,18 +3,7 @@ import styled from 'styled-components';
 import axios from 'axios';
 import imgPlaceholder from '../../images/image_placeholder.jpg';
 
-export default function TypeCard(props) {
-
-    const [typeDetails, setTypeDetails] = useState();
-    const [pokemonDetails, setPokemonDetails] = useState();
-
-    useEffect(() => {
-        const url = props.type.url
-        axios.get(url)
-        .then(res => setTypeDetails(res.data))
-    }, [props]);
-
-    const Card = styled.button`
+const Card = styled.button`
         width: 240px;
         height: 96px;
         background-color: white;
@@ -26,10 +15,18 @@ export default function TypeCard(props) {
         align-items: center;
         box-shadow: 3px 3px #eee;
         text-transform: capitalize;
-        &:hover {
-            box-shadow: 3px 3px #aaa;
-        }
     `
+
+export default function TypeCard(props) {
+
+    const [typeDetails, setTypeDetails] = useState();
+    const [pokemonDetails, setPokemonDetails] = useState();
+
+    useEffect(() => {
+        const url = props.type.url
+        axios.get(url)
+        .then(res => setTypeDetails(res.data))
+    }, [props]);
 
     const getExamplePokemonDetails = () => {
         const examplePokemons = typeDetails.pokemon[0];

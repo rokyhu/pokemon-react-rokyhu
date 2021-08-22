@@ -4,17 +4,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import imgPlaceholder from '../../images/image_placeholder.jpg';
 
-export default function PokemonCard(props) {
 
-    const [pokemonDetails, setPokemonDetails] = useState();
-
-    useEffect(() => {
-        const url = props.pokemon.url
-        axios.get(url)
-        .then(res => setPokemonDetails(res.data))
-    }, [props]);
-    
-    const Card = styled.button`
+const Card = styled.button`
         width: 240px;
         height: 96px;
         background-color: white;
@@ -32,9 +23,20 @@ export default function PokemonCard(props) {
         }
     `
 
+export default function PokemonCard(props) {
+
+    const [pokemonDetails, setPokemonDetails] = useState();
+
+    useEffect(() => {
+        const url = props.pokemon.url
+        axios.get(url)
+        .then(res => setPokemonDetails(res.data))
+    }, [props]);
+    
+
     const isDataPresent = pokemonDetails != null;
     const pokemonId = isDataPresent ? pokemonDetails.id : null
-            
+        
     return (
         <Link to={{
             pathname: `/pokemon-detail/${pokemonId}`,

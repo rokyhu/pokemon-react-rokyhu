@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import GitHub from './GitHub';
 
-export default function PageHeader() {
-
-    const AppHeader = styled.div`
+const AppHeader = styled.div`
         padding: 10px 20px;
         /* background-color: rgba(36, 28, 28, 0.6); */
         height: 70px;
@@ -16,6 +14,8 @@ export default function PageHeader() {
         font-size: calc(10px + 2vmin);
         color: white;
     `
+
+export default function PageHeader() {
 
     return (
         <AppHeader>
