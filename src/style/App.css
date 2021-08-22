@@ -50,6 +50,11 @@ Link:visited {
 
 a:hover,
 Link:hover {
+  color: indianred;
+}
+
+a:hover.NavItem,
+Link:hover.NavItem {
   border-bottom: 3px solid indianred;
   margin-bottom: -3px;
   color: indianred;
@@ -101,16 +106,15 @@ code {
   }
 }
 
-.App-header {
+/* .App-header {
   padding: 10px 20px;
-  /* background-color: rgba(36, 28, 28, 0.6); */
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: left;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .AppLogo {
   background-image: url(../images/logo.png);
@@ -150,7 +154,7 @@ code {
   padding: 0 14px;
 }
 
-.Card {
+/* .Card {
   width: 240px;
   height: 96px;
   background-color: white;
@@ -160,7 +164,12 @@ code {
   display: flex;
   align-items: center;
   box-shadow: 3px 3px #cccccc;
+  text-transform: capitalize;
 }
+
+.Card:hover {
+  box-shadow: 3px 3px #afafaf;
+} */
 
 .btn {
   font-family: "Fjalla One", -apple-system, BlinkMacSystemFont, "Segoe UI",
@@ -201,6 +210,13 @@ code {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: rgb(73, 66, 66);
+}
+
+.App-footer > p {
+  font-family: "Fjalla One", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  font-size: 0.8rem;
 }
 
 .App-link {

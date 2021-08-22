@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import Type from './Type';
+import TypeCard from './TypeCard';
 
 export default function TypeList(props) {
 
@@ -21,17 +21,17 @@ export default function TypeList(props) {
     
     return (
         <>
-            {/* <div className="CardNavigation VisibilityHidden">
+            <div className="CardNavigation VisibilityHidden">
                 <button className="btn">Previous</button>
-            </div> */}
+            </div>
             <div className="CardContainer">
                 {typeList.results.map((type) => (
-                    <Type key={type.url} type={type} />
+                    <TypeCard key={type.url} type={type} />
                 ))}
             </div>
-            {/* <div className="CardNavigation VisibilityHidden">
+            <div className="CardNavigation VisibilityHidden">
                 <button className="btn">Next</button>
-            </div> */}
+            </div>
         </>
     )
 }
