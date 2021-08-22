@@ -1,37 +1,37 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Type from './Type';
 
-export default class TypeList extends React.Component {
-    state = {
-        typeList: {
-            count: 0,
-            next: null,
-            previous: null,
-            results: []
-        }
-      }
+export default function TypeList(props) {
 
-    componentDidMount() {
-        axios.get('https://pokeapi.co/api/v2/type')
-        .then(res => this.setState({typeList: res.data}))
-    }
+    const [typeUrl, setTypeUrl] = useState('https://pokeapi.co/api/v2/type');
     
-    render() {
-        return (
-            <>
-                <div className="CardNavigation VisibilityHidden">
-                    <button className="btn">Previous</button>
-                </div>
-                <div className="CardContainer">
-                    {this.state.typeList.results.map((type) => (
-                        <Type key={type.url} type={type} />
-                    ))}
-                </div>
-                <div className="CardNavigation VisibilityHidden">
-                    <button className="btn">Next</button>
-                </div>
-            </>
-        )
-    }
+    const [typeList, setTypeList] = useState({
+        count: 0,
+        next: null,
+        previous: null,
+        results: []
+    });
+
+    useEffect(() => {
+        axios.get(typeUrl)
+        .then(res => setTypeList(res.data))
+    }, [typeUrl]);
+
+    
+    return (
+        <>
+            <div className="CardNavigation VisibilityHidden">
+                <button className="btn">Previous</button>
+            </div>
+            <div className="CardContainer">
+                {typeList.results.map((type) => (
+                    <Type key={type.url} type={type} />
+                ))}
+            </div>
+            <div className="CardNavigation VisibilityHidden">
+                <button className="btn">Next</button>
+            </div>
+        </>
+    )
 }
